@@ -47,7 +47,7 @@ class TennisGameTest extends TestCase
     public function returnsFifteenThirty()
     {
 
-        $tennisGame = new TennisGame(15, 15);
+        $tennisGame = new TennisGame(15, 30);
 
         $this->assertEquals("Fifteen - Thirty", $tennisGame->getScore());
 
@@ -59,7 +59,7 @@ class TennisGameTest extends TestCase
     public function returnsThirtyAll()
     {
 
-        $tennisGame = new TennisGame(15, 15);
+        $tennisGame = new TennisGame(30, 30);
 
         $this->assertEquals("Thirty all", $tennisGame->getScore());
 
@@ -71,7 +71,7 @@ class TennisGameTest extends TestCase
     public function returnsFifteenForty ()
     {
 
-        $tennisGame = new TennisGame(15, 0);
+        $tennisGame = new TennisGame(15, 40);
 
         $this->assertEquals("Fifteen - Forty", $tennisGame->getScore());
 
@@ -80,7 +80,7 @@ class TennisGameTest extends TestCase
     public function returnsThirtyForty ()
     {
 
-        $tennisGame = new TennisGame(15, 0);
+        $tennisGame = new TennisGame(30, 40);
 
         $this->assertEquals("Thirty - Forty", $tennisGame->getScore());
 
@@ -92,7 +92,7 @@ class TennisGameTest extends TestCase
     public function returnsDeuce ()
     {
 
-        $tennisGame = new TennisGame(15, 0);
+        $tennisGame = new TennisGame(40, 40);
 
         $this->assertEquals("Deuce", $tennisGame->getScore());
 

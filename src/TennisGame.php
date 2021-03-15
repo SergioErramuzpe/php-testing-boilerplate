@@ -21,10 +21,22 @@ class TennisGame
     }
 
     public function getScore () : string {
-        if ($this->player1Score == $this->player2Score)
+        if ($this->player1Score == 0 && $this->player2Score == 0)
             return "Love all";
-        else
+        elseif (($this->player1Score == 15 && $this->player2Score == 0) || ($this->player1Score == 0 && $this->player2Score == 15))
             return "Fifteen - Love";
+        elseif ($this->player1Score == 15 && $this->player2Score == 15)
+            return "Fifteen all";
+        elseif (($this->player1Score == 15 && $this->player2Score == 30) || ($this->player1Score == 30 && $this->player2Score == 15))
+            return "Fifteen - Thirty";
+        elseif ($this->player1Score == 30 && $this->player2Score == 30)
+            return "Thirty all";
+        elseif (($this->player1Score == 15 && $this->player2Score == 40) || ($this->player1Score == 40 && $this->player2Score == 15))
+            return "Fifteen - Forty";
+        elseif (($this->player1Score == 15 && $this->player2Score == 40) || ($this->player1Score == 40 && $this->player2Score == 15))
+            return "Thirty - Forty";
+        else
+            return "Deuce";
     }
 
 
