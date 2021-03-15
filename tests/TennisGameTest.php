@@ -98,5 +98,53 @@ class TennisGameTest extends TestCase
 
     }
 
+    /**
+     * @test
+     */
+    public function returnsWhoHasAdvantageP1 ()
+    {
+
+        $tennisGame = new TennisGame(50, 40);
+
+        $this->assertEquals("Deuce", $tennisGame->getScore());
+
+    }
+
+    /**
+     * @test
+     */
+    public function returnsWhoHasAdvantageP2 ()
+    {
+
+        $tennisGame = new TennisGame(40, 50);
+
+        $this->assertEquals("Deuce", $tennisGame->getScore());
+
+    }
+
+    /**
+     * @test
+     */
+    public function returnsWinnerP1 ()
+    {
+
+        $tennisGame = new TennisGame(60, 40);
+
+        $this->assertEquals("Deuce", $tennisGame->getScore());
+
+    }
+
+    /**
+     * @test
+     */
+    public function returnsWinnerP2 ()
+    {
+
+        $tennisGame = new TennisGame(40, 60);
+
+        $this->assertEquals("Deuce", $tennisGame->getScore());
+
+    }
+
 
 }
