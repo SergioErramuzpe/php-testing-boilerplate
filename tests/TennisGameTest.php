@@ -17,5 +17,17 @@ class TennisGameTest extends TestCase
         $this->assertEquals("Love all", $tennisGame->getScore());
     }
 
+    /**
+     * @test
+     */
+    public function returnsFifteenLove ()
+    {
+
+        $tennisGame = new TennisGame();
+
+        $this->assertEquals("Fifteen - Love", $tennisGame->getScore());
+
+    }
+
 
 }
