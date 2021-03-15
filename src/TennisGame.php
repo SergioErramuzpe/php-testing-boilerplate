@@ -21,6 +21,25 @@ class TennisGame
         $this->player2Name = $player2Name;
     }
 
+    public function wonPoint ($playerName) {
+        var $playerScore = 0;
+        if ($playerName == $this->player1Name)
+            $playerScore = $this->player1Score;
+        else
+            $playerScore = $this->player2Score;
+
+        if ($this->playerScore == 0 ||$this->playerScore == 15)
+            $this->playerScore += 15;
+        else
+            $this->playerScore += 10;
+
+        if ($playerName == $this->player1Name)
+            $this->player1Score = $playerScore;
+        else
+            $this->player2Score = $playerScore;
+
+    }
+
     public function getScore () : string {
         if ($this->player1Score == 0 && $this->player2Score == 0)
             return "Love all";
