@@ -7,7 +7,15 @@ use PHPUnit\Framework\TestCase;
 
 class TennisGameTest extends TestCase
 {
+    /**
+     * @test
+     */
+    public function returnsLoveAll()
+    {
+        $tennisGame = new TennisGame();
 
+        $this->assertEquals("Love all", $tennisGame->getScore());
+    }
 
 
 }
