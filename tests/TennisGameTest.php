@@ -12,7 +12,7 @@ class TennisGameTest extends TestCase
      */
     public function returnsLoveAll()
     {
-        $tennisGame = new TennisGame(0, 0);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Love all", $tennisGame->getScore());
     }
@@ -23,7 +23,7 @@ class TennisGameTest extends TestCase
     public function returnsFifteenLove ()
     {
 
-        $tennisGame = new TennisGame(15, 0);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Fifteen - Love", $tennisGame->getScore());
 
@@ -35,7 +35,7 @@ class TennisGameTest extends TestCase
     public function returnsFifteenAll()
     {
 
-        $tennisGame = new TennisGame(15, 15);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Fifteen all", $tennisGame->getScore());
 
@@ -47,7 +47,7 @@ class TennisGameTest extends TestCase
     public function returnsFifteenThirty()
     {
 
-        $tennisGame = new TennisGame(15, 30);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Fifteen - Thirty", $tennisGame->getScore());
 
@@ -59,7 +59,7 @@ class TennisGameTest extends TestCase
     public function returnsThirtyAll()
     {
 
-        $tennisGame = new TennisGame(30, 30);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Thirty all", $tennisGame->getScore());
 
@@ -71,7 +71,7 @@ class TennisGameTest extends TestCase
     public function returnsFifteenForty ()
     {
 
-        $tennisGame = new TennisGame(15, 40);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Fifteen - Forty", $tennisGame->getScore());
 
@@ -80,7 +80,7 @@ class TennisGameTest extends TestCase
     public function returnsThirtyForty ()
     {
 
-        $tennisGame = new TennisGame(30, 40);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Thirty - Forty", $tennisGame->getScore());
 
@@ -92,7 +92,7 @@ class TennisGameTest extends TestCase
     public function returnsDeuce ()
     {
 
-        $tennisGame = new TennisGame(40, 40);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Deuce", $tennisGame->getScore());
 
@@ -104,7 +104,7 @@ class TennisGameTest extends TestCase
     public function returnsWhoHasAdvantageP1 ()
     {
 
-        $tennisGame = new TennisGame(50, 40);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Advantage Player1", $tennisGame->getScore());
 
@@ -116,7 +116,7 @@ class TennisGameTest extends TestCase
     public function returnsWhoHasAdvantageP2 ()
     {
 
-        $tennisGame = new TennisGame(40, 50);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Advantage Player2", $tennisGame->getScore());
 
@@ -128,7 +128,7 @@ class TennisGameTest extends TestCase
     public function returnsWinnerP1 ()
     {
 
-        $tennisGame = new TennisGame(60, 40);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Win Player1", $tennisGame->getScore());
 
@@ -140,7 +140,7 @@ class TennisGameTest extends TestCase
     public function returnsWinnerP2 ()
     {
 
-        $tennisGame = new TennisGame(40, 60);
+        $tennisGame = new TennisGame("Paco", "Javier");
 
         $this->assertEquals("Win Player2", $tennisGame->getScore());
 

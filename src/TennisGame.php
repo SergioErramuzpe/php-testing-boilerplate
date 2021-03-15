@@ -9,15 +9,16 @@ class TennisGame
 
     var $player1Score;
     var $player2Score;
-
+    var $player1Name;
+    var $player2Name;
 
     /**
      * TennisGame constructor.
      */
-    public function __construct($player1Score, $player2Score)
+    public function __construct($player1Name, $player2Name)
     {
-        $this->player1Score = $player1Score;
-        $this->player2Score = $player2Score;
+        $this->player1Name = $player1Name;
+        $this->player2Name = $player2Name;
     }
 
     public function getScore () : string {
