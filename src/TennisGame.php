@@ -33,10 +33,16 @@ class TennisGame
             return "Thirty all";
         elseif (($this->player1Score == 15 && $this->player2Score == 40) || ($this->player1Score == 40 && $this->player2Score == 15))
             return "Fifteen - Forty";
-        elseif (($this->player1Score == 15 && $this->player2Score == 40) || ($this->player1Score == 40 && $this->player2Score == 15))
-            return "Thirty - Forty";
-        else
+        elseif ($this->player1Score == 40 && $this->player2Score == 40)
             return "Deuce";
+        elseif ($this->player1Score == 50)
+            return "Advantage Player1";
+        elseif ($this->player2Score == 50)
+            return "Advantage Player2";
+        elseif ($this->player1Score == 60)
+            return "Win Player1";
+        else
+            return "Win Player2";
     }
 
 

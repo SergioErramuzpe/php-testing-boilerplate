@@ -106,7 +106,7 @@ class TennisGameTest extends TestCase
 
         $tennisGame = new TennisGame(50, 40);
 
-        $this->assertEquals("Deuce", $tennisGame->getScore());
+        $this->assertEquals("Advantage Player1", $tennisGame->getScore());
 
     }
 
@@ -118,7 +118,7 @@ class TennisGameTest extends TestCase
 
         $tennisGame = new TennisGame(40, 50);
 
-        $this->assertEquals("Deuce", $tennisGame->getScore());
+        $this->assertEquals("Advantage Player2", $tennisGame->getScore());
 
     }
 
@@ -130,7 +130,7 @@ class TennisGameTest extends TestCase
 
         $tennisGame = new TennisGame(60, 40);
 
-        $this->assertEquals("Deuce", $tennisGame->getScore());
+        $this->assertEquals("Win Player1", $tennisGame->getScore());
 
     }
 
@@ -142,7 +142,7 @@ class TennisGameTest extends TestCase
 
         $tennisGame = new TennisGame(40, 60);
 
-        $this->assertEquals("Deuce", $tennisGame->getScore());
+        $this->assertEquals("Win Player2", $tennisGame->getScore());
 
     }
 
