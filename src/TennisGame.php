@@ -21,22 +21,40 @@ class TennisGame
         $this->player2Name = $player2Name;
     }
 
-    public function wonPoint ($playerName) {
-        var $playerScore = 0;
-        if ($playerName == $this->player1Name)
+    public function wonPoint ($playerName) : void
+    {
+
+        $playerScore = 0;
+        $otherScore = 0;
+
+        if ($playerName == $this->player1Name) {
             $playerScore = $this->player1Score;
-        else
+            $otherScore = $this->player2Score;
+
+        } else {
             $playerScore = $this->player2Score;
+            $otherScore = $this->player1Score;
+        }
 
-        if ($this->playerScore == 0 ||$this->playerScore == 15)
-            $this->playerScore += 15;
-        else
-            $this->playerScore += 10;
+        if ($otherScore == 50 && $playerScore == 40) {
+            $otherScore = 40;
+        } else if ($otherScore == 40 && $playerScore == 40) {
+            $playerScore = 50;
+        } else if ($playerScore <= 15) {
+            $playerScore += 15;
+        } else if ($playerScore == 40) {
+            $playerScore += 20;
+        } else
+            $playerScore += 10;
 
-        if ($playerName == $this->player1Name)
+        if ($playerName == $this->player1Name) {
             $this->player1Score = $playerScore;
-        else
+            $this->player2Score = $otherScore;
+        } else {
             $this->player2Score = $playerScore;
+            $this->player1Score = $otherScore;
+        }
+
 
     }
 
@@ -47,22 +65,26 @@ class TennisGame
             return "Fifteen - Love";
         elseif ($this->player1Score == 15 && $this->player2Score == 15)
             return "Fifteen all";
+        elseif (($this->player1Score == 30 && $this->player2Score == 0) || ($this->player1Score == 0 && $this->player2Score == 30))
+            return "Thirty - Love";
         elseif (($this->player1Score == 15 && $this->player2Score == 30) || ($this->player1Score == 30 && $this->player2Score == 15))
             return "Fifteen - Thirty";
         elseif ($this->player1Score == 30 && $this->player2Score == 30)
             return "Thirty all";
+        elseif (($this->player1Score == 40 && $this->player2Score == 0) || ($this->player1Score == 0 && $this->player2Score == 40))
+            return "Forty - Love";
         elseif (($this->player1Score == 15 && $this->player2Score == 40) || ($this->player1Score == 40 && $this->player2Score == 15))
             return "Fifteen - Forty";
         elseif ($this->player1Score == 40 && $this->player2Score == 40)
             return "Deuce";
         elseif ($this->player1Score == 50)
-            return "Advantage Player1";
+            return "Advantage ".(string)$this->player1Name;
         elseif ($this->player2Score == 50)
-            return "Advantage Player2";
+            return "Advantage ".(string)$this->player2Name;
         elseif ($this->player1Score == 60)
-            return "Win Player1";
+            return "Win ".(string)$this->player1Name;
         else
-            return "Win Player2";
+            return "Win ".(string)$this->player2Name;
     }
 
 
