@@ -1,17 +1,14 @@
 name: learn-github-actions
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: push
+  branch:
+    -develop
 jobs:
-  check-bats-version:
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
-      - run: ls -al
+      - name: Checkout develop
+        uses: actions/checkout@v2
+      - name: Check files
+        run: ls -al
 
 
