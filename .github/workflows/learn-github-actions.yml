@@ -21,7 +21,10 @@ jobs:
       - name: Check files
         run: ls -al
 
-      - name: Run test suite
-        run: composer run-script test
+      - name: Install dependencies
+        run: composer install
+
+      - name: Run unit test
+        run: ./vendor/bin/phpunit -c phpunit.xml
 
 
